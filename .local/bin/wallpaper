@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#find random wallpaper or if specified and set it as wallpaper using pywal
+
+if [ -z "$1" ] 
+then
+    echo "usage: $0 [path/to/images] or [path/to/image]"
+    exit 1
+else
+if [ -d "$1" ] # if directory
+    then
+         ls $1 |sort -R |tail -1 |while read file; do
+            wal -a 0.5 -i $1/$file
+        done
+    else # if file 
+        wal -a 0.5 -i $1
+    fi
+fi
+cp $HOME/.cache/wal/colors.Xresources $HOME/.Xresources
+
+#https://github.com/FilipLitwora/pywal-discord
+pywal-discord 
+
+spicetify update
+
+#reload bspwm border colors
+#source ~/.cache/wal/colors.sh
+#bspc config normal_border_color "${foreground}"
+#bspc config focused_border_color "${color2}"
+#pywalfox update
+#color=$(sed 's/\#//' <<< $background)
+#echo $color
+#ratbagctl "Logitech G403 Prodigy Wired/Wireless Gaming Mouse" led 0 set color $color
+
+#ratbagctl "Logitech G403 Prodigy Wired/Wireless Gaming Mouse" led 1 set color $color

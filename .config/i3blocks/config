@@ -1,0 +1,13 @@
+# _ _____ _     _            _        
+#(_)___ /| |__ | | ___   ___| | _____ 
+#| | |_ \| '_ \| |/ _ \ / __| |/ / __|
+#| |___) | |_) | | (_) | (__|   <\__ \
+#|_|____/|_.__/|_|\___/ \___|_|\_\___/
+
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none 
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
